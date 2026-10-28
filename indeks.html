@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InventoriKu | Manajemen Stok</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- HALAMAN LOGIN -->
+  <section id="loginPage" class="login-page">
+    <div class="login-card">
+      <div class="brand-icon">IK</div>
+      <h1>InventoriKu</h1>
+      <p class="muted">Sistem Manajemen Inventori</p>
+
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input id="username" autocomplete="username"
+          placeholder="Masukkan username" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password"
+          autocomplete="current-password"
+          placeholder="Masukkan password" required>
+
+        <p id="loginError" class="error-message" hidden></p>
+        <button type="submit" class="btn-primary full-width">
+          Masuk ke Dashboard
+        </button>
+      </form>
+
+      <div class="demo-info">
+        <strong>Akun Demo</strong>
+        <p>Admin: <code>admin</code> / <code>admin123</code></p>
+        <p>Staff: <code>staff</code> / <code>staff123</code></p>
+      </div>
+      <p class="muted small-text">
+        Versi latihan. Jangan gunakan password sungguhan.
+      </p>
+    </div>
+  </section>
+
+  <!-- APLIKASI SETELAH LOGIN -->
+  <div id="appPage" class="app-shell" hidden>
+
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon small-brand">IK</div>
+        <div>
+          <strong>InventoriKu</strong>
+          <small>Inventory System</small>
+        </div>
+      </div>
+
+      <p class="nav-label">MENU UTAMA</p>
+
+      <nav id="navigation">
+        <button class="nav-item active" data-page="dashboard">
+          <span>▦</span> Dashboard
+        </button>
+        <button class="nav-item" data-page="stok">
+          <span>▣</span> Lihat Stok
+        </button>
+        <button class="nav-item" data-page="transaksi">
+          <span>⇄</span> Barang Masuk/Keluar
+        </button>
+
+        <div id="adminMenu">
+          <p class="nav-label">ADMINISTRASI</p>
+          <button class="nav-item" data-page="staff">
+            <span>♙</span> Data Staff
+          </button>
+          <button class="nav-item" data-page="supplier">
+            <span>♧</span> Data Supplier
+          </button>
+        </div>
+
+        <p class="nav-label">LAPORAN</p>
+        <button class="nav-item" data-page="rekap">
+          <span>▤</span> Rekap Laporan
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="user-avatar" id="userAvatar">A</div>
+        <div class="user-details">
+          <strong id="sidebarName">Admin</strong>
+          <small id="sidebarRole">Administrator</small>
+        </div>
+        <button id="logoutButton" class="logout-icon"
+          title="Keluar" aria-label="Keluar">↪</button>
+      </div>
+    </aside>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="menu-toggle"
+          aria-label="Buka navigasi" aria-expanded="false">☰</button>
+        <div class="breadcrumb">
+          <span>InventoriKu</span>
+          <span>/</span>
+          <strong id="pageTitle">Dashboard</strong>
+        </div>
+        <div class="topbar-user">
+          <span id="topbarName">Admin</span>
+          <div class="user-avatar">●</div>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <div id="pageContainer"></div>
+        <footer>InventoriKu · Proyek latihan HTML, CSS, dan JavaScript</footer>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
